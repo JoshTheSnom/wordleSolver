@@ -23,11 +23,9 @@ public class Main {
         //4: aero
         //5: serai
         //8: lactones
-        String currentWord;
 
-
+        Scanner sc = new Scanner(System.in);
         for(int i = 6; i > 0; i--) {
-            Scanner sc = new Scanner(System.in);
 
             String myGuess = sc.nextLine().toLowerCase();
             String myClue = sc.nextLine().toUpperCase();
