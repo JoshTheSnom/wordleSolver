@@ -11,11 +11,11 @@ public class Main {
     public static ArrayList<String> possibleGuesses;
     public static void main(String[] args) throws Exception{
 
-        BufferedReader bf = new BufferedReader (new FileReader("src/com/company/5letter.txt"));
+        BufferedReader bf = new BufferedReader (new FileReader("src/com/company/ofsolutions.txt"));
         String solsLine = bf.readLine();
         sols = new ArrayList<>(Arrays.asList(solsLine.split(",")));
 
-        bf = new BufferedReader(new FileReader("src/com/company/5letter.txt"));
+        bf = new BufferedReader(new FileReader("src/com/company/ofguesses.txt"));
         String guessLine = bf.readLine();
         possibleGuesses = new ArrayList<>(Arrays.asList(guessLine.split(",")));
 
@@ -141,7 +141,7 @@ public class Main {
                     for (int j = 0; j < sols.size(); j++) {
                         int inputNum = 0, solNum = 0;
                         for (int k = 0; k < letterCount; k++) {
-                            if(input.charAt(k) == letter && gClue.charAt(k) == 'Y') inputNum++;
+                            if(input.charAt(k) == letter && (gClue.charAt(k) == 'Y' || gClue.charAt(k) == 'G')) inputNum++;
                             if(sols.get(j).charAt(k) == letter) solNum++;
                         }
                         if (sols.get(j).indexOf(letter) != -1 && inputNum!=solNum) { //if word contains letter
